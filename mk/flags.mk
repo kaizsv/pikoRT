@@ -10,7 +10,7 @@ WGET = wget
 PYTHON = python3
 
 # FIXME: configurable via menuconfig or command line
-CFLAGS_OPT = -Os # -flto
+CFLAGS_OPT = -O0 # -flto
 
 CFLAGS += \
     -std=c99 \
@@ -20,7 +20,7 @@ CFLAGS += \
     -Iinclude/kernel \
     -D_POSIX_THREADS=1 -D_POSIX_TIMERS=1 -D_POSIX_REALTIME_SIGNALS=1 \
     -Wno-main -fdiagnostics-color \
-    -ffunction-sections -fdata-sections -ggdb \
+    -ffunction-sections -fdata-sections -ggdb3 -fshort-wchar \
     $(CFLAGS_OPT)
 
 # FIXME: make Piko-specific build options configurable
